@@ -1,0 +1,204 @@
+@import "variable.scss";
+
+@mixin text-overflow-clamp($count: 2) {
+  word-break: break-all;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: $count;
+  overflow: hidden;
+}
+@mixin small_count {
+  .small_title {
+    position: absolute;
+    right: 0;
+    top: 0.02rem;
+    transform: scale(0.8);
+    color: #fff;
+    .iconfont {
+      font-size: 0.14rem;
+    }
+  }
+}
+@mixin img_box {
+  width: 0.92rem;
+  margin-bottom: 0.15rem;
+  p {
+    margin: 0;
+  }
+  .img_box {
+    width: 100%;
+    height: 0.92rem;
+    position: relative;
+    img {
+      width: 100%;
+      height: 100%;
+      border-radius: 0.03rem;
+    }
+    @include small_count;
+  }
+}
+
+@mixin text-overflow-one {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+@mixin small_artlist_box($width, $radius) {
+  display: flex;
+  .img_box {
+    width: ($width);
+    height: ($width);
+    margin-right: 0.1rem;
+    img {
+      width: 100%;
+      height: 100%;
+      border-radius: $radius;
+    }
+  }
+}
+
+@mixin video_box($width, $heighht) {
+  display: flex;
+  .img_box {
+    width: $width;
+    height: $heighht;
+    margin-right: 0.1rem;
+    position: relative;
+    img {
+      width: 100%;
+      height: 100%;
+      border-radius: 0.03rem;
+    }
+  }
+  .name {
+    p {
+      margin: 0;
+      width: 100%;
+      line-height: 0.14rem;
+      font-size: $best-small-font;
+    }
+    .mv_name {
+      @include text-overflow-clamp;
+      margin: 0.04rem 0;
+      span {
+        display: inline-block;
+        font-size: 0.12rem;
+        border: 1px solid $main-background;
+        color: $main-background;
+        padding: 1px 2px;
+        transform: scale(0.8);
+        border-radius: 3px;
+      }
+    }
+    .creator_name {
+      @include text-overflow-one;
+      font-size: $best-small-font;
+      color: $noselect-color;
+      margin-top: 0.05rem;
+    }
+  }
+}
+@mixin search_header {
+  padding-top: 0.1rem;
+  header {
+    h5 {
+      margin: 0;
+      font-size: $best-big-font;
+      font-weight: 800;
+    }
+    height: 0.3rem;
+    line-height: 0.3rem;
+  }
+}
+@mixin search_footer($height: 0.5rem) {
+  .footer {
+    text-align: center;
+    font-size: $best-small-font;
+    color: $noselect-color;
+    height: $height;
+    line-height: $height;
+    .iconfont {
+      font-size: $best-small-font;
+    }
+  }
+}
+
+@mixin play_list($top: 0.15rem) {
+  .name {
+    padding-top: $top;
+    box-sizing: border-box;
+    p {
+      margin: 0;
+      line-height: 0.18rem;
+      font-size: $best-small-font;
+      @include text-overflow-one;
+    }
+    .list_message {
+      font-size: $best-small-font;
+      color: $noselect-color;
+    }
+  }
+}
+
+@mixin song_list {
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+  font-size: $normal-font;
+  .option {
+    .iconfont {
+      font-size: 0.2rem;
+      line-height: 0.5rem;
+      color: $noselect-color;
+    }
+    .iconziyuan {
+      margin-left: 0.1rem;
+    }
+  }
+  .name {
+    width: 80%;
+    height: 0.5rem;
+    p {
+      margin: 0;
+      line-height: 0.18rem;
+      @include text-overflow-one;
+    }
+    .song_name {
+      font-size: $normal-font;
+      margin-top: 0.1rem;
+      i {
+        font-style: normal;
+        color: $noselect-color;
+      }
+    }
+    .artist_name {
+      font-size: $best-small-font;
+      color: $noselect-color;
+    }
+  }
+}
+@mixin not_find {
+  position: relative;
+  .not_find {
+    position: absolute;
+    left: 0;
+    top: 0.2rem;
+    width: 100%;
+    height: 0.5rem;
+    line-height: 0.2rem;
+    text-align: center;
+    font-size: $normal-font;
+    color: $nofind-color;
+  }
+}
+
+@mixin loading_box {
+  .loading_box {
+    position: relative;
+    bottom: -0.1rem;
+    height: 0.3rem;
+    width: 100%;
+    left: 0;
+  }
+}
